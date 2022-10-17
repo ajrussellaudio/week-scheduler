@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import { Event, Weekday, weekdays } from '../../context/Events/types';
+import { Button } from '../Button';
 import { Form } from './AddEventForm.style';
 
 export type AddEventFormProps = {
@@ -32,7 +33,7 @@ export const AddEventForm = ({ onSubmit }: AddEventFormProps) => {
         </Fragment>
       ))}
 
-      <button type="submit">Add event</button>
+      <Button type="submit">Add event</Button>
     </Form>
   );
 };

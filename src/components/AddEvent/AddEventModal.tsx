@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import { useEvents } from '../../context/Events';
 import { Action } from '../../context/Events/reducer';
+import { Button } from '../Button';
 import { AddEventForm } from './AddEventForm';
 
 Modal.setAppElement('#root');
@@ -20,9 +21,9 @@ export const AddEventModal = () => {
 
   return (
     <>
-      <button type="button" onClick={open}>
+      <Button type="button" onClick={open}>
         Add event
-      </button>
+      </Button>
       <Modal isOpen={isOpen} onRequestClose={close}>
         <AddEventForm onSubmit={handleSubmit} />
       </Modal>
