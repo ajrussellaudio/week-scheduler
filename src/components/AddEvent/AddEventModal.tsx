@@ -4,6 +4,8 @@ import { useEvents } from '../../context/Events';
 import { Action } from '../../context/Events/reducer';
 import { AddEventForm } from './AddEventForm';
 
+Modal.setAppElement('#root');
+
 export type ModalButtonProps = Record<string, never>;
 
 export const AddEventModal = () => {
