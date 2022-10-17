@@ -15,7 +15,7 @@ export function Calendar() {
   const mockSchedule = useMockEvents();
 
   const combinedSchedule = useMemo(
-    () => combineSchedules(schedule, showMockEvents ? mockSchedule : undefined),
+    () => combineSchedules(schedule, showMockEvents ? mockSchedule : {}),
     [showMockEvents, schedule, mockSchedule]
   );
 

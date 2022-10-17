@@ -1,7 +1,7 @@
 import { sortBy } from 'lodash';
 import { Event, Schedule, weekdays } from '../context/Events/types';
 
-export function combineSchedules(...schedules: (Schedule | undefined)[]): Schedule {
+export function combineSchedules(...schedules: Schedule[]): Schedule {
   return weekdays.reduce((prev, weekday) => {
     const eventsList: (Event | undefined)[] = schedules
       .map((schedule) => (schedule ? schedule[weekday] : undefined))

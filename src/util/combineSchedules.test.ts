@@ -32,11 +32,11 @@ describe('combineSchedules', () => {
     });
   });
 
-  it('combines a schedule with undefined', () => {
+  it('combines a schedule with an empty schedule', () => {
     const schedule1: Schedule = {
       Sunday: [{ subject: 'Football', start: '15:00', end: '17:00' }],
     };
-    const schedule2 = undefined;
+    const schedule2 = {};
     expect(combineSchedules(schedule1, schedule2)).toEqual({
       Sunday: [{ subject: 'Football', start: '15:00', end: '17:00' }],
     });
