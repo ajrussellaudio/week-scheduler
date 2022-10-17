@@ -1,0 +1,62 @@
+{
+  "Monday": [
+    {
+      "subject": "Standup",
+      "start": "09:15",
+      "end": "09:30"
+    },
+    {
+      "subject": "Focus time",
+      "start": "13:00",
+      "end": "17:00"
+    }
+  ],
+  "Tuesday": [
+    {
+      "subject": "Standup",
+      "start": "09:15",
+      "end": "09:30"
+    },
+    {
+      "subject": "Team lead sync",
+      "start": "14:00",
+      "end": "14:30"
+    }
+  ],
+  "Wednesday": [
+    {
+      "subject": "Standup",
+      "start": "09:15",
+      "end": "09:30"
+    },
+    {
+      "subject": "Focus time",
+      "start": "13:00",
+      "end": "17:00"
+    }
+  ],
+  "Thursday": [
+    {
+      "subject": "Standup",
+      "start": "09:15",
+      "end": "09:30"
+    }
+  ],
+  "Friday": [
+    {
+      "subject": "Standup",
+      "start": "09:15",
+      "end": "09:30"
+    },
+    {
+      "subject": "Focus time",
+      "start": "13:00",
+      "end": "17:00"
+    },
+    {
+      "subject": "Pints 🍻",
+      "start": "17:00",
+      "end": "22:30"
+    }
+  ]
+}
