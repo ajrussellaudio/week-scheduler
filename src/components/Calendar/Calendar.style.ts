@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Grid = styled.div`
   padding: 2rem;
@@ -27,11 +27,23 @@ export const EventsList = styled.ul`
   gap: 0.5rem;
 `;
 
-export const Event = styled.li`
+const Clashing = css`
+  border-color: red;
+  background-color: tomato;
+`;
+
+type EventProps = {
+  $isClashing?: boolean;
+};
+
+export const Event = styled.li<EventProps>`
   width: 100%;
   padding: 0.333rem;
   border-radius: 0.2rem;
+  border: 1px solid transparent;
   box-shadow: 0 0 17px 2px rgb(0 0 0 / 10%);
+
+  ${(props) => props.$isClashing && Clashing}
 `;
 
 export const Subject = styled.span`

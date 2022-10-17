@@ -14,6 +14,7 @@ export type Event = {
   subject: string;
   start: string;
   end: string;
+  isClashing?: boolean;
 };
 
 export type Schedule = {

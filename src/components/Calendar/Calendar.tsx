@@ -4,6 +4,7 @@ import { useEvents } from '../../context/Events';
 import { weekdays } from '../../context/Events/types';
 import { useMockEvents } from '../../context/MockEvents';
 import { combineSchedules } from '../../util/combineSchedules';
+import { detectClashes } from '../../util/detectClashes';
 import { DayName, Event, EventsList, Grid, Subject, Time } from './Calendar.style';
 
 export type CalendarProps = Record<string, never>;
@@ -18,10 +19,12 @@ export function Calendar() {
     [showMockEvents, schedule, mockSchedule]
   );
 
+  const eventsWithClashes = useMemo(() => detectClashes(combinedSchedule), [combinedSchedule]);
+
   return (
     <Grid>
       {weekdays.map((weekday) => {
-        const events = combinedSchedule[weekday] || [];
+        const events = eventsWithClashes[weekday] || [];
 
         return (
           <div key={weekday}>
@@ -29,7 +32,7 @@ export function Calendar() {
             <EventsList>
               {events.length > 0
                 ? events.map((event) => (
-                    <Event key={`${weekday} ${event.subject}`}>
+                    <Event key={`${weekday} ${event.subject}`} $isClashing={event.isClashing}>
                       <Subject>{event.subject}</Subject>
                       <Time>
                         <time>{event.start}</time> - <time>{event.end}</time>
